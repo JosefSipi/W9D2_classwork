@@ -2,10 +2,15 @@
 // require("./bullet.js");
 // require("./game_view.js");
 // require("./game.js");
-// require("./moving_object.js");
 // require("./ship.js");
 // require("./utils.js");
 // const Game = require("./game.js");
+
+
+const Proto = require("./moving_object.js");
+
+window.MovingObject = Proto.MovingObject;
+
 
 document.addEventListener("DOMContentLoaded", function() {
     
@@ -18,6 +23,9 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.fillStyle = "black";
     ctx.fillRect(0, 0, 1000, 1000);
     console.log("webpack");
+
+    n = new Proto.MovingObject();
+    n.draw(ctx);
 
 });
 
