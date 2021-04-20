@@ -1,4 +1,3 @@
-// require("./asteroid.js");
 // require("./bullet.js");
 // require("./game_view.js");
 // require("./game.js");
@@ -6,10 +5,12 @@
 // const Game = require("./game.js");
 
 
+require("./asteroid.js");
 require("./utils.js");
-const Proto = require("./moving_object.js");
+// const Asteroid = require("./asteroid.js");
+const MovingObject = require("./moving_object.js");
 
-window.MovingObject = Proto.MovingObject;
+window.MovingObject = MovingObject;
 
 
 document.addEventListener("DOMContentLoaded", function() {
@@ -24,11 +25,14 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.fillRect(0, 0, 1000, 1000);
     console.log("webpack");
 
-    n = new Proto.MovingObject();
-    n.draw(ctx);
-
-    n.move(ctx);
+    // n = new MovingObject();
     // n.draw(ctx);
+
+
+    // n.move(ctx);
+    
+    // a = new Asteroid;
+    // a.draw(ctx)
 });
 
 

@@ -1,8 +1,8 @@
-function MovingObject() {
-    this.pos = [30, 30];
-    this.vel = [10, 10];
-    this.radius = 5;
-    this.color = "#00FF00";
+function MovingObject(options) {
+    this.pos = options.pos;
+    this.vel = options.vel;
+    this.radius = options.radius;
+    this.color = options.color;
 }
 
 MovingObject.prototype.draw = function (ctx) {
@@ -34,4 +34,4 @@ MovingObject.prototype.move = function (ctx) {
 // };
 
 
-module.exports = {MovingObject}
+module.exports = MovingObject;
