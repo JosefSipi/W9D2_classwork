@@ -3,10 +3,10 @@
 // require("./game_view.js");
 // require("./game.js");
 // require("./ship.js");
-// require("./utils.js");
 // const Game = require("./game.js");
 
 
+require("./utils.js");
 const Proto = require("./moving_object.js");
 
 window.MovingObject = Proto.MovingObject;
