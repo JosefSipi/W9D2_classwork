@@ -5,10 +5,10 @@ const MovingObject = require("./moving_object.js");
 
 function Asteroid (options) {
     options = options || {};
-    options.pos = options.pos || Util.randomVec(length);
+    options.pos = options.pos || Util.randomVec(5);
     options.color = "gray";
     options.radius = 20;
-    options.vel = Util.randomVec(length);
+    options.vel = Util.randomVec(5);
     MovingObject.call(this, options);
 }
 

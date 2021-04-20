@@ -7,6 +7,7 @@
 
 require("./asteroid.js");
 require("./utils.js");
+const Asteroid = require("./asteroid.js");
 // const Asteroid = require("./asteroid.js");
 const MovingObject = require("./moving_object.js");
 
@@ -25,10 +26,20 @@ document.addEventListener("DOMContentLoaded", function() {
     ctx.fillRect(0, 0, 1000, 1000);
     console.log("webpack");
 
-    // n = new MovingObject();
-    // n.draw(ctx);
+    
+    const mo = new MovingObject({
+        pos: [30, 30],
+        vel: [10, 10],
+        radius: 5,
+        color: "#00FF00"
+    });
 
+    mo.draw(ctx);
+    mo.move(ctx);
 
+    const ast = new Asteroid();
+    ast.draw(ctx);
+    
     // n.move(ctx);
     
     // a = new Asteroid;
