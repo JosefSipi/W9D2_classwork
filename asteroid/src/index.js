@@ -27,6 +27,8 @@ document.addEventListener("DOMContentLoaded", function() {
     n = new Proto.MovingObject();
     n.draw(ctx);
 
+    n.move(ctx);
+    // n.draw(ctx);
 });
 
 

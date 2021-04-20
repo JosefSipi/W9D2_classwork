@@ -15,7 +15,7 @@
   \**********************/
 /***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("// require(\"./asteroid.js\");\n// require(\"./bullet.js\");\n// require(\"./game_view.js\");\n// require(\"./game.js\");\n// require(\"./ship.js\");\n// require(\"./utils.js\");\n// const Game = require(\"./game.js\");\n\n\nconst Proto = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\nwindow.MovingObject = Proto.MovingObject;\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    \n    const canvasEl = document.getElementById(\"game-canvas\");\n    canvasEl.width = 1000;\n    canvasEl.height = 1000;\n    \n    const ctx = canvasEl.getContext(\"2d\");\n    \n    ctx.fillStyle = \"black\";\n    ctx.fillRect(0, 0, 1000, 1000);\n    console.log(\"webpack\");\n\n    n = new Proto.MovingObject();\n    n.draw(ctx);\n\n});\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("// require(\"./asteroid.js\");\n// require(\"./bullet.js\");\n// require(\"./game_view.js\");\n// require(\"./game.js\");\n// require(\"./ship.js\");\n// require(\"./utils.js\");\n// const Game = require(\"./game.js\");\n\n\nconst Proto = __webpack_require__(/*! ./moving_object.js */ \"./src/moving_object.js\");\n\nwindow.MovingObject = Proto.MovingObject;\n\n\ndocument.addEventListener(\"DOMContentLoaded\", function() {\n    \n    const canvasEl = document.getElementById(\"game-canvas\");\n    canvasEl.width = 1000;\n    canvasEl.height = 1000;\n    \n    const ctx = canvasEl.getContext(\"2d\");\n    \n    ctx.fillStyle = \"black\";\n    ctx.fillRect(0, 0, 1000, 1000);\n    console.log(\"webpack\");\n\n    n = new Proto.MovingObject();\n    n.draw(ctx);\n\n    n.move(ctx);\n    // n.draw(ctx);\n});\n\n\n\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ }),
 
@@ -25,7 +25,7 @@ eval("// require(\"./asteroid.js\");\n// require(\"./bullet.js\");\n// require(\
   \******************************/
 /***/ ((module) => {
 
-eval("function MovingObject() {\n    this.pos = [30, 30];\n    this.vel = [10, 10];\n    this.radius = 5;\n    this.color = \"#00FF00\";\n}\n\nMovingObject.prototype.draw = function (ctx) {\n\n    ctx.beginPath();\n    ctx.arc(30, 30, 5, 0, 2 * Math.PI);\n    ctx.fillStyle = \"green\";\n    ctx.fill();\n    ctx.strokeStyle = \"green\";\n    ctx.lineWidth = 2;\n    ctx.stroke()\n};\n\n\n// MovingObject.prototype.move = function () {\n\n// };\n\n\n// MovingObject.prototype.isCollidedWith = function(otherMovingObject){\n\n// };\n\n\nmodule.exports = {MovingObject}\n\n//# sourceURL=webpack:///./src/moving_object.js?");
+eval("function MovingObject() {\n    this.pos = [30, 30];\n    this.vel = [10, 10];\n    this.radius = 5;\n    this.color = \"#00FF00\";\n}\n\nMovingObject.prototype.draw = function (ctx) {\n\n    ctx.beginPath();\n    ctx.arc(this.pos[0], this.pos[1], this.radius, 0, 2 * Math.PI);\n    ctx.fillStyle = \"green\";\n    ctx.fill();\n    ctx.strokeStyle = \"green\";\n    ctx.lineWidth = 2;\n    ctx.stroke()\n};\n\n\nMovingObject.prototype.move = function (ctx) {\n    let posx = this.pos[0];\n    let posy = this.pos[1];\n    let velx = this.vel[0];\n    let vely = this.vel[1];\n\n    this.pos = [posx + velx, posy + vely];\n    this.draw(ctx);\n\n};\n\n\n// MovingObject.prototype.isCollidedWith = function(otherMovingObject){\n\n// };\n\n\nmodule.exports = {MovingObject}\n\n//# sourceURL=webpack:///./src/moving_object.js?");
 
 /***/ })
 
